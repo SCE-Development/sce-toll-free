@@ -1,0 +1,14 @@
+*.wav
+.DS_Store
+
+moh/*
+!moh/keep
+
+sounds/*
+!sounds/keep
+
+logs/*
+!logs/keep
+
+etc/asterisk/favorite_number/*
+!etc/asterisk/favorite_number/keep

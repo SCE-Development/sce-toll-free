@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  asterisk:
+    build: .
+    container_name: asterisk
+    network_mode: host        # simplifies SIP + RTP networking
+    volumes:
+      - ./etc/asterisk:/etc/asterisk
+      - ./sounds:/var/lib/asterisk/sounds
+      - ./moh:/var/lib/asterisk/moh
+      - ./logs:/var/log/asterisk
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
